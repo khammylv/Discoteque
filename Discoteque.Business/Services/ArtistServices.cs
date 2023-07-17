@@ -11,9 +11,48 @@ public class ArtistService : IArtistService
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<Artist>> GetArtistAsync()
+    public async Task<IEnumerable<Artist>> GetArtistAsync()
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
+         await Task.CompletedTask;
+          return new List<Artist>
+          {
+             new()
+      {
+        Id = 1,
+        Name = "Interpol",
+        Label = "Matador Records",
+        IsOnTour = true
+      },
+      new()
+      {
+        Id = 2,
+        Name = "Arctic Monkeys",
+        Label = "Domino Recording Company",
+        IsOnTour = true
+      },
+      new()
+      {
+        Id = 3,
+        Name = "Lana Del Rey",
+        Label = "Interscope Records",
+        IsOnTour = false
+      },
+      new()
+      {
+        Id = 4,
+        Name = "Tame Impala",
+        Label = "Interscope Records",
+        IsOnTour = true
+      },
+      new()
+      {
+        Id = 5,
+        Name = "Radiohead",
+        Label = "XL Recordings",
+        IsOnTour = false
+      } 
+          };
     }
 
     public Task<Artist> GetById(int id)

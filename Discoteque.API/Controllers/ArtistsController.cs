@@ -20,9 +20,10 @@ namespace Discoteque.API.Controllers
             _artistService = artistService;
         }
        [HttpGet]
-          public async Task<IActionResult> Get(){
+       [Route("GetAllArtistsAsync")]
+       public async Task<IActionResult> Get(){
             var artist = await _artistService.GetArtistAsync();
             return Ok(artist);
-          }
+       }
     }
 }
